@@ -5,6 +5,7 @@ using UnityEngine;
 // score, power, and kicking angle (horizontal/vertical)
 public class InfoUI : MonoBehaviour
 {
+    // Required TextMeshProUGUI objects for displaying text.
     [SerializeField]
     private TextMeshProUGUI m_ScoreText = null;
     [SerializeField]
@@ -29,6 +30,7 @@ public class InfoUI : MonoBehaviour
         m_PowerText.text = "Power: " + fPower + " Units";
         m_HAngleText.text = "Angle to Net: " + iHorizontal + " Degrees";
         m_VAngleText.text = "Kicking Angle: " + iVertical + " Degrees";
+        // This if statement simply displays the goal text only when a goal has been scored.
         if (bGoal)
         {
             m_GoalText.text = "GOOOOOOOOAL!";

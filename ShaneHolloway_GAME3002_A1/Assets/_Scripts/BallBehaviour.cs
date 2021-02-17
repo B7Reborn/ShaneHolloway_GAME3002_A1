@@ -26,6 +26,7 @@ public class BallBehaviour : MonoBehaviour
         m_interface.OnRequestUpdateUI(m_iGoals, m_iMisses, m_projectile.m_fLaunchPower, m_projectile.m_iVerticalAngle, m_projectile.m_iHorizontalAngle, m_bGoalScored);
     }
 
+    // Update first takes in any user input, then updates the UI.
     private void Update()
     {
         HandleUserInput();
@@ -74,6 +75,7 @@ public class BallBehaviour : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.R))
         {
             m_projectile.Reset();
+            // If a goal was scored, get a point. Otherwise, get a miss. Then reset the goal bool.
             if (m_bGoalScored)
             {
                 m_iGoals++;
